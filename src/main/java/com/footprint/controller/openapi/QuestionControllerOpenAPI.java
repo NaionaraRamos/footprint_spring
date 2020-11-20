@@ -46,4 +46,10 @@ public interface QuestionControllerOpenAPI {
 			@ApiResponse(code = 404, message = "O recurso não foi encontrado", response = Problem.class) })
 	@ApiImplicitParam(name = "id", value = "Id a ser atualizado", required = true, dataType = "int", paramType = "path", example = "1")
 	ResponseEntity<?> update(@ApiParam(name = "corpo", value = "Representação de uma nova pergunta", required = true) @Valid Question question, Long id);
+	
+//	@ApiOperation("Cadastrar uma pergunta")
+//	@ApiResponses({ @ApiResponse(code = 201, message = "Pergunta Cadastrado", response = QuestionDto.class)})
+//	ResponseEntity<?> save(
+//			@ApiParam(name = "corpo", value = "Representação de uma nova pergunta", required = true)
+//			@Valid QuestionRequest questionRequest);
 }

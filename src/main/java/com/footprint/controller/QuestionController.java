@@ -90,4 +90,13 @@ public class QuestionController implements QuestionControllerOpenAPI {
 		
 		return ResponseEntity.notFound().build();
 	}
+	
+//	@Override
+//	@PostMapping("/postquestion")
+//	public ResponseEntity<?> save(@RequestBody @Valid QuestionRequest questionRequest){
+//			
+//		QuestionDto questionDto = questionService.save(questionRequest);
+//		System.out.println(questionDto);
+//		return ResponseEntity.status(HttpStatus.CREATED).body(questionDto);
+//	}
 }
