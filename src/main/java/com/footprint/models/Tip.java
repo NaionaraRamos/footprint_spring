@@ -18,7 +18,6 @@ public class Tip {
 	
 	private String text;
 	
-//	@OneToOne
-//	private String category;
-	
+	//@OneToOne
+	//private String category;
 }

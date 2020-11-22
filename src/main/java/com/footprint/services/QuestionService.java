@@ -5,7 +5,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import com.footprint.dto.QuestionDto;
 import com.footprint.mapper.QuestionMapper;
@@ -36,14 +35,8 @@ public class QuestionService {
 
 	@Transactional
 	public void delete(Long id) {
-		
-		//try {
-			questionRepository.deleteById(id);
-			questionRepository.flush();
-		
-//		} catch (EmptyResultDataAccessException e) {
-//			throw new UsernameNotFoundException(id);
-//		};			
+		questionRepository.deleteById(id);
+		questionRepository.flush();		
 	}
 
 	public List<QuestionDto> list() {

@@ -10,7 +10,7 @@ import com.footprint.models.Question;
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Long>{
 
-	@Query(value = "SELECT * FROM question WHERE status='ativo' AND title!=''", nativeQuery = true)
+	@Query(value = "SELECT * FROM question WHERE status='ativo' AND title!='' ORDER BY id ASC", nativeQuery = true)
 	List<Question> listActiveQuestions();
 	
 //	@Query(value = "INSERT INTO question IF title!=''")
