@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.footprint.controller.openapi.UserControllerOpenAPI;
 import com.footprint.dto.UserDto;
 import com.footprint.models.User;
+import com.footprint.repositories.UserRepository;
 //import com.footprint.repositories.UserRepository;
 import com.footprint.request.UserRequest;
 import com.footprint.services.UserService;
@@ -27,7 +28,7 @@ import com.footprint.services.UserService;
 @CrossOrigin
 @RestController
 @RequestMapping("/user")
-public class UserController implements UserControllerOpenAPI{
+public class UserController implements UserControllerOpenAPI {
 	
 	@Autowired private UserService userService;
 	//@Autowired private UserRepository userRepository;
@@ -80,10 +81,9 @@ public class UserController implements UserControllerOpenAPI{
 
 	@Override
 	@PutMapping("/update/{id}")
-	//@PatchMapping("/update/{id}")
 	public ResponseEntity<?> update(@RequestBody User user, Long id) {
 		User currentUser = userService.search(id).orElse(null);
-		
+
 		if(currentUser != null) {
 			BeanUtils.copyProperties(user, currentUser, "id");
 			
@@ -93,4 +93,111 @@ public class UserController implements UserControllerOpenAPI{
 		
 		return ResponseEntity.notFound().build();
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	@PutMapping("/{id}")
+//	public void update(@PathVariable Long id, @RequestBody User user) {
+//		//User userU = userRepository.findById(id).get();
+//		
+//		User userU = userRepository.getOne(id);
+		
+//		if(userU.getName() != user.getName()) {
+//			userU.setName(user.getName());
+//		}
+//		
+//		if(userU.getSurname() != user.getSurname()) {
+//			userU.setSurname(user.getSurname());
+//		}
+//		
+//		if(userU.getMail() != user.getMail() || user.getMail() == null) {
+//			userU.setMail(user.getMail());
+//		}
+//		
+//		if(userU.getPassword() != user.getPassword() || user.getPassword() != null) {
+//			userU.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+//		}
+		
+		//if(userU.getAnswers() != user.getAnswers()) {
+//			userU.setAnswers(user.getAnswers());
+//		}
+		
+		//userRepository.insertAnswers(user.getAnswers(), id);
+		
+//		userU.setName(user.getName());
+//		userU.setSurname(user.getSurname());
+//		userU.setMail(user.getMail());
+//		userU.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+//		userU.setAnswers(user.getAnswers());
+//		userRepository.save(userU);
+//		userService.update(user);
+//	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	//@Override
+//		@PutMapping("/update/{id}")
+//		public ResponseEntity<?> update(@RequestBody User user, Long id) {
+//			User currentUser = userService.search(id).orElse(null);
+//		//	User currentUser = userRepository.getOne(id);
+//			//User user2 = userRepository.getOne(id);
+//			
+////			String originalName = user.getName();
+////			String originalSurname = user.getSurname();
+////			String originalMail = user.getMail();
+////			String originalAnswers = user.getAnswers();
+//			
+////			if(currentUser.getMail() != originalMail) {
+////				currentUser.setMail(originalMail);
+////			}
+////			
+//			if(currentUser != null) {
+//				BeanUtils.copyProperties(user, currentUser, "id");
+//				
+//				userService.update(currentUser);
+//				//userService.update(user2);
+//				return ResponseEntity.ok(currentUser);
+//				//return ResponseEntity.ok(user2);
+//			}
+//			
+//			return ResponseEntity.notFound().build();
+//		}
 }

@@ -19,4 +19,19 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	
 	@Query(value = "INSERT INTO user (name, surname, mail, password) VALUES (:name, :surname, :mail, :password) IF name!=''", nativeQuery = true)
 	public UserDto insertUser(@Param("name") String name, @Param("surname") String surname, @Param("mail") String mail, @Param("password") String password);
+	
+	@Query(value = "UPDATE user SET answers = :answers WHERE id = :id", nativeQuery = true)
+	public void insertAnswers(@Param("answers") String answers, @Param("id") Long Id);
+	
+//	@Query(value = "UPDATE user SET mail = :mail WHERE id = :id", nativeQuery = true)
+//	public void insertMail(@Param("mail") String mail, @Param("id") Long Id);
+//	
+//	@Query(value = "UPDATE user SET name = :name WHERE id = :id", nativeQuery = true)
+//	public void insertName(@Param("name") String name, @Param("id") Long Id);
+//	
+//	@Query(value = "UPDATE user SET surname = :surname WHERE id = :id", nativeQuery = true)
+//	public void insertSurname(@Param("surname") String surname, @Param("id") Long Id);
+	
+//	@Query(value = "UPDATE user SET answers = :answers WHERE id = :id", nativeQuery = true)
+//	public void insertAnswers(@Param("answers") String answers, @Param("id") Long Id);
 }
