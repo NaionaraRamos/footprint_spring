@@ -12,5 +12,5 @@ public class UserRequest {
 	@Email
 	private String mail;
 	private String password;
-	private String answers;
+	//private String answers;
 }

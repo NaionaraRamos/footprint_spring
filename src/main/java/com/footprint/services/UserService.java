@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.footprint.dto.UserDto;
 import com.footprint.exception.UserNotFound;
 import com.footprint.mapper.UserMapper;
-//import com.footprint.models.EmailNotification;
+import com.footprint.models.EmailNotification;
 import com.footprint.models.User;
 import com.footprint.repositories.UserRepository;
 import com.footprint.request.UserRequest;
@@ -20,13 +20,13 @@ public class UserService {
 	
 	@Autowired private UserRepository userRepository;
 	@Autowired private UserMapper mapper;
-	//@Autowired private NotificationService notificationService;
+	@Autowired private NotificationService notificationService;
 	
 	@Transactional
 	public UserDto save(UserRequest userRequest) {
 		User user = mapper.requestToModel(userRequest);
 		user.setMail(userRequest.getMail());
-		//.sendMail(new EmailNotification("Pegada Ecológica", user.getMail(), "Obrigada por se cadastrar no Pegada Ecológica!"));
+		notificationService.sendMail(new EmailNotification("Pegada Ecológica", user.getMail(), "Obrigada por se cadastrar no Pegada Ecológica!"));
 		return mapper.modelToDto(userRepository.save(user));
 	}
 	

@@ -22,16 +22,17 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
 	
-	@Column(nullable = false) private String name;
+	@Column(nullable = false)
+	private String name;
 	
-	@Column(nullable = false) private String surname;
+	@Column(nullable = false)
+	private String surname;
 	
-	@Column(nullable = false) private String mail;
+	@Column(nullable = false)
+	private String mail;
 	
-	@Column(nullable = false) private String password;
-	
-	@Column(columnDefinition = "JSON")
-	private String answers;
+	@Column(nullable = false)
+	private String password;
 	
 	@ManyToMany
 	@JoinTable(name = "user_groups", joinColumns = @JoinColumn(name = "user_id"),

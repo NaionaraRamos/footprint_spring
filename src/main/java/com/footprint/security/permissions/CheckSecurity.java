@@ -1,27 +1,26 @@
-package com.footprint.security.permissions;
-
+//package com.footprint.security.permissions;
+//
 //import static java.lang.annotation.ElementType.METHOD;
 //import static java.lang.annotation.RetentionPolicy.RUNTIME;
 //import java.lang.annotation.Retention;
 //import java.lang.annotation.Target;
 //import org.springframework.security.access.prepost.PreAuthorize;
-
-public class CheckSecurity {
-	public @interface User {
-	
-//		// DH01
+//
+//public class CheckSecurity {
+//	public @interface User {
+//	
 //		@PreAuthorize("isAuthenticated() and " +
-//				"hasAuthority('DH01')")
+//				"hasAuthority('ADMIN')")
 //		@Retention(RUNTIME)
 //		@Target(METHOD)
-//		public @interface PodeEditar {
+//		public @interface CanInsertQuestion {
 //		}
-//		// DH02
+//
 //		@PreAuthorize("isAuthenticated() and " +
-//				"hasAuthority('DH02')")
+//				"hasAuthority('USER')")
 //		@Retention(RUNTIME)
 //		@Target(METHOD)
-//		public @interface PodeConsultar {
+//		public @interface CanDoWhateverLessInsertQuestion {
 //		}	
-	}
-}
+//	}
+//}

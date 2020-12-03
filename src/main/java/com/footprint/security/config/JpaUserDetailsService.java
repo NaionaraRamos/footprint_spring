@@ -27,6 +27,10 @@ public class JpaUserDetailsService implements UserDetailsService {
 		com.footprint.models.User user = userRepository.findByMail(username)
 				.orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado com e-mail informado"));
 		
+		if(user == null){
+			throw new UsernameNotFoundException("Usuario não encontrado!");
+		}
+		
 		return new AuthUser(user, getAuthorities(user));
 	}
 	

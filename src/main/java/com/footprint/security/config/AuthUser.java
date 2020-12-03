@@ -18,5 +18,5 @@ private static final long serialVersionUID = 1L;
 		
 		this.userId = usuario.getId();
 		this.nomeCompleto = usuario.getName();
-	}	
+	}
 }

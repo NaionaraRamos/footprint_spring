@@ -19,10 +19,10 @@ import io.swagger.annotations.ApiResponses;
 public interface QuestionControllerOpenAPI {
 	
 	@ApiOperation("Cadastrar uma pergunta")
-	@ApiResponses({ @ApiResponse(code = 201, message = "Pergunta Cadastrado", response = QuestionDto.class)})
+	@ApiResponses({ @ApiResponse(code = 201, message = "Pergunta Cadastrada", response = QuestionDto.class)})
 	ResponseEntity<?> save(
-			@ApiParam(name = "corpo", value = "Representação de uma nova pergunta", required = true)
-			@Valid QuestionRequest questionRequest);
+		@ApiParam(name = "corpo", value = "Representação de uma nova pergunta", required = true)
+		@Valid QuestionRequest questionRequest);
 	
 	@ApiOperation(value = "Buscar todas as perguntas", httpMethod = "GET")
 	@ApiResponses({ @ApiResponse(code = 200, message = "Buscar todas as perguntas", response = QuestionDto.class)})
@@ -36,20 +36,13 @@ public interface QuestionControllerOpenAPI {
 	
 	@ApiOperation(value = "Excluir pergunta pelo ID", httpMethod = "DELETE", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiResponses({ @ApiResponse(code = 204, message = "Pergunta excluída com sucesso", response = QuestionDto.class),
-			@ApiResponse(code = 404, message = "O recurso não foi encontrado", response = Problem.class) })
+		@ApiResponse(code = 404, message = "O recurso não foi encontrado", response = Problem.class) })
 	@ApiImplicitParam(name = "id", value = "ID a ser excluído", required = true, dataType = "int", paramType = "path", example = "1")
 	ResponseEntity<Question> delete(Long id);
 	
-
 	@ApiOperation(value = "Atualizar pergunta pelo ID", httpMethod = "PUT", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ApiResponses({ @ApiResponse(code = 200, message = "Cliente atualizado com sucesso.", response = QuestionDto.class),
-			@ApiResponse(code = 404, message = "O recurso não foi encontrado", response = Problem.class) })
+	@ApiResponses({ @ApiResponse(code = 200, message = "Pergunta atualizada com sucesso.", response = QuestionDto.class),
+		@ApiResponse(code = 404, message = "O recurso não foi encontrado", response = Problem.class) })
 	@ApiImplicitParam(name = "id", value = "Id a ser atualizado", required = true, dataType = "int", paramType = "path", example = "1")
 	ResponseEntity<?> update(@ApiParam(name = "corpo", value = "Representação de uma nova pergunta", required = true) @Valid Question question, Long id);
-	
-//	@ApiOperation("Cadastrar uma pergunta")
-//	@ApiResponses({ @ApiResponse(code = 201, message = "Pergunta Cadastrado", response = QuestionDto.class)})
-//	ResponseEntity<?> save(
-//			@ApiParam(name = "corpo", value = "Representação de uma nova pergunta", required = true)
-//			@Valid QuestionRequest questionRequest);
 }

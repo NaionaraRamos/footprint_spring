@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.footprint.controller.openapi.QuestionControllerOpenAPI;
 import com.footprint.dto.QuestionDto;
 import com.footprint.models.Question;
-import com.footprint.models.User;
 import com.footprint.repositories.QuestionRepository;
 import com.footprint.request.QuestionRequest;
 import com.footprint.services.QuestionService;
@@ -91,6 +90,25 @@ public class QuestionController implements QuestionControllerOpenAPI {
 		
 		return ResponseEntity.notFound().build();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 //	@PutMapping("/updatequestion/{id}")
 //	public void atualizar(@PathVariable Long id, @RequestBody Question question) {
